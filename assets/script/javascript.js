@@ -3,7 +3,7 @@ let listSpan = document.querySelectorAll('span');
 
 //Ajout d'un écouteur d'événement au click sur toutes les span
 for (let each of listSpan) {
-  each.addEventListener('click', function() {
+  each.addEventListener('click', function () {
     let val = this.innerText; //création d'une variable pour récupérer la valeur
 
     //detection des cas particulier pour traitement
@@ -11,30 +11,29 @@ for (let each of listSpan) {
 
     if (
       (val >= 0 && val <= 9) ||
-      val == '*' ||
-      val == '-' ||
-      val == '+' ||
-      val == '/'
+      val === '*' ||
+      val === '-' ||
+      val === '+' ||
+      val === '/'
     ) {
       document.getElementById('zone').value += this.innerHTML;
-    } else if (val == 'C') {
+    } else if (val === 'C') {
       document.getElementById('zone').value = '';
-    } else if (val == '1/X') {
+    } else if (val === '1/X') {
       document.getElementById('zone').value =
         1 / parseInt(document.calc.txt.value);
-    } else if (val == '\u221a') {
+    } else if (val === '\u221a') {
       document.calc.txt.value = Math.sqrt(document.calc.txt.value);
-    } else if (val == 'X 3') {
+    } else if (val === 'X 3') {
       document.calc.txt.value = Math.pow(document.calc.txt.value, 3);
-    } else if (val == 'X 2') {
+    } else if (val === 'X 2') {
       document.calc.txt.value =
         parseInt(document.calc.txt.value) * parseInt(document.calc.txt.value);
-    } else if (this.innerText == '=') {
+    } else if (this.innerText === '=') {
       document.calc.txt.value = eval(calc.txt.value);
     }
   });
 }
-
 
 //description des cas avec code clavier et retour des valeurs
 function uniKeyCode(event) {
