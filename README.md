@@ -1,6 +1,6 @@
-﻿# Calculatrice
+﻿# Calculator
 
-# Premier exercice 
+# First practice
 
 Production in january 2020
 first calculator in string in JS vanilla
